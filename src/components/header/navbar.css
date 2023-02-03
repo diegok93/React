@@ -1,0 +1,37 @@
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
+    border: 2px;
+    border-style: solid;
+    border-color: darkblue;
+    background-color: rgb(36, 36, 36);
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+h1 {
+    color: rgb(190, 190, 190);
+}
+
+h3 {
+    color:bisque;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    margin: 10px;
+    color: rgb(122, 120, 228);
+}
