@@ -6,15 +6,14 @@ import NavCategories from "./NavCategories";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
-
-const Navbar =  ({ name, numItems }) => {
+const Navbar =  ({ numItems }) => {
     
 return (
     <>
         <header class="contenedor">
             <img src={logo} alt="Demister Brewing"/>
 
-            <h1>Demister Brewing - Bienvenido {name} </h1>
+            <h1>Demister Brewing</h1>
 
             <NavCategories />
 
@@ -23,8 +22,6 @@ return (
       
 
         </header>
-        
-    
     </>    
     )
 }

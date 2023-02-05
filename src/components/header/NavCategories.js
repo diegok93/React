@@ -2,9 +2,9 @@ import React from "react";
 
 const NavCategories = ({name, children}) => { 
     const categories = [
-        {id: 0, name: "Home"},
-        {id: 1, name: "Productos"},
-        {id: 2, name: "Contacto"},
+        {id: 0, name: "HOME"},
+        {id: 1, name: "PRODUCTOS"},
+        {id: 2, name: "CONTACTO"},
         {id: 3, name: "FAQ"},
     ];
 
