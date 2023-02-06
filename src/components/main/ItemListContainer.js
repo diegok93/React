@@ -1,12 +1,12 @@
 import React from "react";
 import './main.css';
 
-const Main =  () => {
+const ItemListContainer =  ({ texto }) => {
     
     return (
         <>
             <main>
-                <h2>Encontrá las mejores cervezas</h2>
+                <h2>{texto}</h2>
             </main>
             
         </>    
@@ -14,4 +14,4 @@ const Main =  () => {
     }
 
 
-export default Main;
+export default ItemListContainer;
