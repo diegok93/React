@@ -7,6 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
+import { Link, NavLink } from "react-router-dom";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -18,10 +19,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   }));
 
 const navigation = [
-  { name: 'HOME', href: '#', current: true },
-  { name: 'PRODUCTOS', href: '#', current: false },
-  { name: 'CONTACTO', href: '#', current: false },
-  { name: 'FAQ', href: '#', current: false },
+  { name: 'HOME', href: '/', current: false },
+  { name: 'RUBIAS', href: '/categories/rubias', current: false },
+  { name: 'ROJAS', href: '/categories/rojas', current: false },
+  { name: 'NEGRAS', href: '/categories/negras', current: false },
 ]
 
 function classNames(...classes) {
@@ -50,9 +51,11 @@ function NavTWCategories({numItems}) {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
+                  <Link to="/">
                   <img className="block h-8 w-auto lg:hidden" src={logo} alt="Demister Brewing"/>
                   
                   <img className="hidden h-8 w-auto lg:block" src={logo} alt="Demister Brewing"/>
+                  </Link>
                   <div className="px-4 text-white font-medium">DEMISTER BREWING</div>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -60,7 +63,15 @@ function NavTWCategories({numItems}) {
                   <div className="flex space-x-4">
                     
                     {navigation.map((item) => (
-                      <a
+                      <NavLink key={item.name} to={item.href} className={classNames(
+                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'px-3 py-2 rounded-md text-sm font-medium'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}>
+                        {item.name}
+                      </NavLink>
+
+                      /* <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
@@ -70,7 +81,8 @@ function NavTWCategories({numItems}) {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </a> */
+
                     ))}
                   </div>
                 </div>
@@ -80,12 +92,13 @@ function NavTWCategories({numItems}) {
                   type="button"
                   className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white">
                  
-
+<Link to={'/Cart'} >
                   <IconButton aria-label="cart">
   <StyledBadge badgeContent={numItems} color="primary">
     <ShoppingCartIcon color="success" />
   </StyledBadge>
 </IconButton>
+</Link>
                 </button>
 
                 {/* Profile dropdown */}
