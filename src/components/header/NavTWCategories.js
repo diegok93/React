@@ -20,9 +20,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const navigation = [
   { name: 'HOME', href: '/', current: false },
-  { name: 'RUBIAS', href: '/categories/rubias', current: false },
-  { name: 'ROJAS', href: '/categories/rojas', current: false },
-  { name: 'NEGRAS', href: '/categories/negras', current: false },
+  { name: 'SUMMER VIBES', href: '/categories/Summer vibes', current: false },
+  { name: 'INVIERNITO', href: '/categories/Inviernito', current: false },
+  { name: 'IPA', href: '/categories/IPA', current: false },
 ]
 
 function classNames(...classes) {

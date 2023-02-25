@@ -3,7 +3,7 @@ import React from "react";
 import ItemListContainer from "./components/main/ItemListContainer"
 import NavbarTW from "./components/header/NavbarTW"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { ItemDetailContainer } from "./components/main/ItemDetailContainer"
+import ItemDetailContainer from "./components/main/ItemDetailContainer"
 import Cart from "./components/main/Cart"
 
 function App() {
@@ -20,13 +20,25 @@ const titulo = "Encontrá las mejores cervezas"
     
     <Routes>
     
-    <Route path={'/'} element={<ItemListContainer greeting={titulo}/>} />
+    <Route
+    path={'/'}
+    element={<ItemListContainer greeting={titulo}/>}
+    />
 
-    <Route path={'/categories/:name'} element={<ItemListContainer greeting={titulo}/>} /> 
+    <Route
+    path={'/categories/:name'}
+    element={<ItemListContainer greeting={titulo}/>}
+    /> 
 
-    <Route path={'/product/:id'} element={<ItemDetailContainer greeting={titulo}/>} /> 
+    <Route
+    path={'/product/:id'}
+    element={<ItemDetailContainer />}
+    /> 
 
-    <Route path={'/cart'} element={<Cart />} /> 
+    <Route
+    path={'/cart'}
+    element={<Cart />}
+    /> 
     
     
     </Routes>

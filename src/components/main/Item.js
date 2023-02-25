@@ -18,8 +18,8 @@ const Item = ({ product }) => {
         <CardMedia
           component="img"
           height="140"
-          image={product.image}
-          alt={product.title}
+          image={product.imagen}
+          alt={product.nombre}
         />
         <CardContent>
           <Typography
@@ -28,10 +28,10 @@ const Item = ({ product }) => {
             component="div"
             style={styles.title}
           >
-            {product.title}
+            {product.nombre}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            ${product.price}
+            ${product.precio}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -53,7 +53,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     margin: 20,
-    backgroundColor: "rgba(249, 220, 92, 0.3)",
+    backgroundColor: "rgba(249, 220, 192, 0.3)",
   },
   title: {
     textOverflow: "ellipsis",

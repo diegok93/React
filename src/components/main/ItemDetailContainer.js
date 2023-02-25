@@ -1,29 +1,40 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from 'react-router-dom';
+import ItemListContainer from './ItemListContainer';
 
-
-export const ItemDetailContainer = ( ) => {
-  const [product, setProduct] = useState([]);
+const ItemDetailContainer = ( ) => {
+  
+  const [producto, setProducto] = useState([]);
   const [loading, setLoading] = useState(true);
+  const {id} = useParams()
 
-  useEffect(() => {
+  useEffect(()=> {
 
-    const getProduct = async () => {
+    const obtenerProductos = async () => {
       try {
-        const res = await fetch("https://fakestoreapi.com/products/1");
-        const data = await res.json();
-        setProduct(data);
+        const respuesta = await fetch("https://63f97aca473885d837ce558e.mockapi.io/Cervezas");
+        const data = await respuesta.json();
+        const filtroCategoria = data.filter((element) => element.id === id);
+        id === undefined ? setProducto(data) : setProducto(filtroCategoria);
+        setProducto(filtroCategoria)
+        setLoading(true);
       } finally {
         setLoading(false);
       }
-    };
+    }
+    obtenerProductos();
 
-    getProduct();
-  }, []);
+  },[id]);
 
-  return (
-    <>
-      {<>{loading ? <h1>Cargando...</h1> : <ItemDetail product={product} />}</>}
-    </>
-  );
+    return (
+        <>
+            {loading ? <h1>Cargando...</h1> : id === undefined ? producto.map((element,i) =>
+            <ItemListContainer key={i} objeto={element} />) :
+            producto.map((element,i)=> <ItemDetail key={i} objeto={element} />)}
+        </>
+    )
+
 };
+
+export default ItemDetailContainer
