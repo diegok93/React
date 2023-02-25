@@ -1,6 +1,6 @@
 import NavTWCategories from './NavTWCategories';
 
-const itemsCarrito = 4
+const itemsCarrito = 7
 
 function NavbarTW() {
   return (

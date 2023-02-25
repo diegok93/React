@@ -33,7 +33,8 @@ const ItemListContainer = ({ greeting }) => {
       {<>
       {loading ? <h1>Cargando...</h1> : 
         <>
-          <div><h1>{greeting}</h1></div>
+          <div><h2>{greeting}</h2></div>
+          <div><h1>{name}</h1></div>
           <ItemList array={productos} />
         </>
         }
