@@ -18,7 +18,7 @@ const titulo = "Encontrá las mejores cervezas"
 
     <BrowserRouter>
     <CartProvider>
-      
+
     <NavbarTW  />
     
     <Routes>

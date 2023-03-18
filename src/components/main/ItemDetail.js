@@ -27,7 +27,7 @@ const ItemDetail = ({ objeto }) => {
           {
             cantAgregada ? <Link to={'/cart'}>Finalizar Compra</Link>
             :
-            <ItemCount onAdd={onAdd} />
+            <ItemCount onAdd={onAdd} stock={objeto.stock} />
           }
 
           
