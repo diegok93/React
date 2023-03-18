@@ -24,5 +24,6 @@ const styles = {
     justifyContent: "space-around",
     alignItems: "center",
     flexWrap: "wrap",
+    border: "0px",
   }
 }

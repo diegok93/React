@@ -3,20 +3,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import './navbar.css';
 import './dist/output.css';
 import logo from "../../assets/logo.jpg";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
 import { Link, NavLink } from "react-router-dom";
+import CartWidget from './CartWidget';
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-      right: -5,
-      top: 13,
-      border: `2px solid ${theme.palette.background.paper}`,
-      padding: '0 4px',
-    },
-  }));
 
 const navigation = [
   { name: 'HOME', href: '/', current: false },
@@ -91,13 +80,9 @@ function NavTWCategories({numItems}) {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
                  
-<Link to={'/Cart'} >
-<IconButton aria-label="cart">
-  <StyledBadge badgeContent={numItems} color="primary">
-    <ShoppingCartIcon color="success" />
-  </StyledBadge>
-</IconButton>
-</Link>
+
+
+<CartWidget />
                 
 
                 {/* Profile dropdown */}

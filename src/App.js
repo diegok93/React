@@ -5,6 +5,8 @@ import NavbarTW from "./components/header/NavbarTW"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ItemDetailContainer from "./components/main/ItemDetailContainer"
 import Cart from "./components/main/Cart"
+import "./App.css"
+import { CartProvider } from "./context/CartContext";
 
 function App() {
 
@@ -15,7 +17,8 @@ const titulo = "Encontrá las mejores cervezas"
     {/* <Navbar numItems={itemsCarrito} /> */}
 
     <BrowserRouter>
-
+    <CartProvider>
+      
     <NavbarTW  />
     
     <Routes>
@@ -43,6 +46,7 @@ const titulo = "Encontrá las mejores cervezas"
     
     </Routes>
 
+    </CartProvider>
     </BrowserRouter>
 
     </>

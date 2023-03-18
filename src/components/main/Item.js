@@ -1,65 +1,21 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import {
-  CardContent,
-  CardMedia,
-  Typography,
-  Button,
-  CardActionArea,
-  CardActions,
-} from "@mui/material";
 import {Link} from 'react-router-dom'
 
 const Item = ({ product }) => {
-  return (
-    
-    <Card sx={{ maxWidth: 345 }} style={styles.container}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={product.imagen}
-          alt={product.nombre}
-        />
-        <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            style={styles.title}
-          >
-            {product.nombre}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            ${product.precio}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Link to={`/product/${product.id}`}>
-          <Button size="small" color="primary">
-            Ver Detalles
-          </Button>
-          </Link>
-      </CardActions>
-    </Card>
+  return (<>
+   
+
+<section className="card" id={product.id}>
+<div className="cardImg"><img src={product.imagen} alt={product.descripcion} /></div>
+<div className="cardText"><p>{product.nombre}</p></div>
+<div className="cardPrice"><p>$ {product.precio}</p></div>
+<Link className="link" to={`/product/${product.id}`}><button className="cardCarrito" id={`button-${product.id}`}><p>Ver Detalles</p></button></Link>
+</section>
+
+
+</>
   );
 };
 
-const styles = {
-  container: {
-    width: window.innerHeight > 900 ? "25%" : "90%",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: 20,
-    backgroundColor: "rgba(249, 220, 192, 0.3)",
-  },
-  title: {
-    textOverflow: "ellipsis",
-    overflow: "hidden",
-    height: 100,
-  },
-};
 
 export default Item;
