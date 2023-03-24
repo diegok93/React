@@ -61,13 +61,13 @@ const stockReduction = () => {
         <div>
         <form action="" method="post" enctype="" onSubmit={handlerSubmit}>
                 <label><h2>Nombre</h2></label>
-                <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} id="nombre" placeholder="Escribí acá tu nombre y apellido" />
+                <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} id="nombre" placeholder="Nombre y apellido" />
 
                 <label><h2>E-mail</h2></label>
-                <input type="text" value={correo} onChange={(e) => setCorreo(e.target.value)} id="mail" placeholder="Escribí acá tu correo electrónico" />
+                <input type="text" value={correo} onChange={(e) => setCorreo(e.target.value)} id="mail" placeholder="Correo electrónico" />
 
                 <div>
-                <button type="submit">Confirmar Compra</button>
+                <button type="submit" className="button button1">Confirmar Compra</button>
                 </div>
             </form>
 
@@ -77,7 +77,7 @@ const stockReduction = () => {
         <>
         <div>Gracias por tu compra</div>
         <div>Tu numero de pedido es el # {trackNumber} </div>
-        <button onClick={handlerResetear}>Realizar una nueva compra</button>
+        <button onClick={handlerResetear} className="button button4">Realizar una nueva compra</button>
         </>
     }
         

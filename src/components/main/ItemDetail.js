@@ -14,7 +14,7 @@ const ItemDetail = ({ objeto }) => {
 }
 
   return (
-    <div style={styles.container}>
+    <div className="cardDetail">
       <img alt={objeto.nombre} src={objeto.imagen} style={styles.image} border="0"/>
       <div>
         <h1>{objeto.nombre}</h1>

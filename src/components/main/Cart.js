@@ -16,13 +16,13 @@ const Cart = () => {
     return (
         <>
 
-        <h2>Carrito</h2>
+        <h1>Carrito</h1>
 
         {total == 0 ? 
             <>
                 <div>  
                     <div>
-                        <section class="cardHorizontal">
+                        <section className="cardHorizontal">
                             <div><p>Carrito Vacío</p></div>
                             <Link className="link" to={'/'}><div><p>Ver Productos</p></div></Link>
                         </section>
@@ -30,8 +30,8 @@ const Cart = () => {
                 </div>
             </> :
             <>
-                {form ?   <div><h1>Resumen de tu pedido:</h1></div>
-                    :     <div><h1>Tu Carrito:</h1></div>
+                {form ?   <div><h2>Resumen de tu pedido:</h2></div>
+                    :     <div><h2>Tu Carrito:</h2></div>
             } 
                 <div>
                     {cart.map((product) => {
@@ -41,7 +41,7 @@ const Cart = () => {
                             <div><p>{product.quantity}</p></div>
                             <div><p>X</p></div>
                             <div><p>$ {product.precio}</p></div>
-                            {!form && <button id={`button-${product.id}`} onClick={()=>removeItem(product.id)}>Eliminar</button> }
+                            {!form && <button id={`button-${product.id}`} onClick={()=>removeItem(product.id)} className="button button3">Eliminar</button> }
                         </section>
                         )
                     })}
@@ -51,7 +51,7 @@ const Cart = () => {
                         <section className="cardHorizontal">
                             <div><p>TOTAL:</p></div>
                             <div><p>$ {total}</p></div>
-                            <button onClick={handlerForm}>Finalizar Compra</button>
+                            <button onClick={handlerForm} className="button button2">Finalizar Compra</button>
                         </section>
                     </div>
                 </div>

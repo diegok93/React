@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 import { db } from "../../firebase/firebase"
 import { getDocs, collection, query, where } from "firebase/firestore"
 
-/* https://63f97aca473885d837ce558e.mockapi.io/Cervezas */
-
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
@@ -44,10 +42,10 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <>
       {<>
-      {loader ? <h1>Cargando...</h1> : 
+      {loader ? <h2>Cargando...</h2> : 
         <>
-          <div><h2>{greeting}</h2></div>
-          <div><h1>{name}</h1></div>
+          <div><h1>{greeting}</h1></div>
+          <div><h2>{name}</h2></div>
           <ItemList array={productos} />
         </>
         }
@@ -60,16 +58,3 @@ const ItemListContainer = ({ greeting }) => {
   
   export default ItemListContainer;
 
-
-/*   const obtenerProductos = async () => {
-    try {
-      const respuesta = await fetch("https://63f97aca473885d837ce558e.mockapi.io/Cervezas");
-      const data = await respuesta.json();
-      const filtroCategoria = data.filter((element) => element.categoria === name);
-      name === undefined ? setProductos(data) : setProductos(filtroCategoria);
-      setLoading(true);
-    } finally {
-      setLoading(false);
-    }
-  }
-  obtenerProductos(); */

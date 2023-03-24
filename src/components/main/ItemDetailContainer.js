@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from 'react-router-dom';
-import ItemListContainer from './ItemListContainer';
 import { db } from "../../firebase/firebase"
 import { doc, getDoc, collection } from "firebase/firestore"
 
@@ -36,7 +35,7 @@ const ItemDetailContainer = ( ) => {
 
     return (
         <>
-            {loader ? <h1>Cargando...</h1> :
+            {loader ? <h2>Cargando...</h2> :
             
             <ItemDetail key={id} objeto={producto} />}
         </>
